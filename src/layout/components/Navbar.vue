@@ -1,6 +1,15 @@
 <template>
   <div :class="navShow ? 'navOn' : 'navOff'">
-    navbar
+   <div class="navbar-container">
+    <div class="navbar-log">
+      匆匆那年
+    </div>
+    <div class="navbar-menu">
+      <a>首页</a>
+      <a>首页</a>
+      <a>首页</a>
+    </div>
+  </div>
   </div>
 </template>
 
@@ -54,4 +63,35 @@ export default {
 		transition: all 0.2s ease-in-out;
 		transform: translate3d(0,-100%,0);
 	}
+  .navbar-container {
+  position: relative;
+  width: 1040px;
+  max-width: 100%;
+  height: 70px;
+  margin: 0 auto;
+  display: block;
+}
+.navbar-log {
+  font-size: 22px;
+  line-height: 22px;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  display: block;
+  width: auto;
+  max-width: 50%;
+  height: 22px;
+  margin-top: -10px;
+  margin-left: 25px;
+  text-decoration: none;
+}
+.navbar-menu {
+  float: right;
+  z-index: 10;
+  width: auto;
+  padding: 20px 15px;
+}
+.navbar-menu a {
+  padding: 0 15px;
+}
 </style>
