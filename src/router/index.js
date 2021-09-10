@@ -19,6 +19,21 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/posts',
+    component: Layout,
+    redirect: '/posts/post',
+    name: 'Posts',
+    meta: { title: '文章', icon: 'form' },
+    children: [
+      {
+        path: 'post',
+        name: 'Posts',
+        component: () => import('@/views/posts/index'),
+        meta: { title: '文章', icon: 'tree' }
+      },
+    ]
+  },
 ]
 
 const createRouter = () =>

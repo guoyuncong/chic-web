@@ -1,15 +1,15 @@
 <template>
   <div :class="navShow ? 'navOn' : 'navOff'">
-   <div class="navbar-container">
-    <div class="navbar-log">
-      匆匆那年
+    <div class="navbar-container">
+      <div class="navbar-log">
+        匆匆那年
+      </div>
+      <div class="navbar-menu">
+        <a>首页</a>
+        <a>首页</a>
+        <a>首页</a>
+      </div>
     </div>
-    <div class="navbar-menu">
-      <a>首页</a>
-      <a>首页</a>
-      <a>首页</a>
-    </div>
-  </div>
   </div>
 </template>
 
@@ -35,7 +35,7 @@ export default {
       if (newValue > 80) {
         this.navShow = false
       } else {
-          this.navShow = true
+        this.navShow = true
       }
     }
   }
@@ -44,26 +44,26 @@ export default {
 
 <style lang="scss" scoped>
 // css样式
-	.navOn {
-		position: fixed;
-    background-color: white;
-    width: 100%;
-    height: 70px;
-		top: 0;
-		left: 0;
-		right: 0;
-		transition: all 0.2s ease-in-out;
-		transform: translateZ(0);
-	}
-	.navOff {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		transition: all 0.2s ease-in-out;
-		transform: translate3d(0,-100%,0);
-	}
-  .navbar-container {
+.navOn {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.2s ease-in-out;
+  transform: translateZ(0);
+}
+.navOff {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.2s ease-in-out;
+  transform: translate3d(0, -100%, 0);
+}
+.navbar-container {
   position: relative;
   width: 1040px;
   max-width: 100%;

@@ -11,7 +11,7 @@
         <div class="group-content">
           <el-row :gutter="20">
             <el-col :span="6" v-for="child in item.child" :key="child.categoryId">
-              <div class="card">
+              <div class="card" @click="queryPosts(item.categoryId)">
                 <el-card :body-style="{ padding: '0px' }">
                   <img :src="child.thumbnail" class="image">
                   <div style="padding: 14px;">
@@ -56,6 +56,13 @@ export default {
       return {
         background: bgColor
       };
+    },
+    // 根据分类ID获取分类下所有的文章
+    queryPosts(categoryId) {
+      this.$router.push({
+        path: '/posts/post',
+        query: { categoryId: categoryId }
+      })
     }
   }
 }
