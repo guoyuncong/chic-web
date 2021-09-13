@@ -20,17 +20,22 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/posts',
+    path: '/post',
     component: Layout,
-    redirect: '/posts/post',
-    name: 'Posts',
+    redirect: '/post/page',
     meta: { title: '文章', icon: 'form' },
     children: [
       {
-        path: 'post',
-        name: 'Posts',
+        path: '/post/page',
+        name: 'Post-Page',
         component: () => import('@/views/posts/index'),
-        meta: { title: '文章', icon: 'tree' }
+        meta: { title: '文章列表', icon: 'tree' }
+      },
+      {
+        path: '/post/detail',
+        name: 'Post-Detail',
+        component: () => import('@/views/posts/detail'),
+        meta: { title: '文章详情', icon: 'tree' }
       },
     ]
   },

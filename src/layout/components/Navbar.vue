@@ -54,6 +54,7 @@ export default {
   right: 0;
   transition: all 0.2s ease-in-out;
   transform: translateZ(0);
+  border: 1px solid #ddd;
 }
 .navOff {
   position: fixed;

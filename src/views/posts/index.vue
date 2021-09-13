@@ -1,7 +1,21 @@
 <template>
-  <div class="main-container">
-    <div class="post-container">    
-      
+  <div>
+    <div class="entries-container">
+      <div class="post-entry"
+           v-for="item in tableDate"
+           :key="item.postId" @click="queryPostDetail(item.postId)">
+        <div class="post-desc">
+          <div class="post-title">
+            {{ item.title }}
+          </div>
+          <div class="post-content">
+            <p> {{ item.digest }} </p>
+          </div>
+          <div class="post-meta">
+            {{ item.publishTime}}
+          </div>
+        </div>
+      </div>
     </div>
     <!-- 分页 -->
     <pagination v-show="total > 0"
@@ -11,6 +25,7 @@
                 :keyword.sync="pageQuery.keyword"
                 @pagination="fetchData" />
   </div>
+
 </template>
 
 <script>
@@ -18,7 +33,7 @@ import { pagePost } from '@/api/post'
 import Pagination from '@/components/Pagination'
 
 export default {
-  name: 'Posts',
+  name: 'Post-Page',
   components: {
     Pagination
   },
@@ -41,7 +56,6 @@ export default {
   // 获取请求中的分类ID
   created() {
     this.pageQuery.categoryIds = this.$route.query.categoryId
-    console.log(this.pageQuery.categoryIds)
     this.fetchData()
   },
   methods: {
@@ -54,9 +68,15 @@ export default {
         current: this.pageQuery.current,
         size: this.pageQuery.size
       }).then(response => {
-        this.tableData = response.data.records
+        this.tableDate = response.data.records
         this.total = response.data.total
-        console.log(this.total)
+      })
+    },
+    // 根据文章ID获取文章详情
+    queryPostDetail(postId) {
+      this.$router.push({
+        path: '/post/detail',
+        query: { postId: postId }
       })
     }
   }
@@ -64,17 +84,33 @@ export default {
 </script>
 
 <style scoped>
-.main-container {
+.entries-container {
   background-color: #f7f7f7;
   width: 100%;
-  padding-top: 60px;
+  height: 100%;
+  padding-top: 50px;
 }
-.post-container {
-  background-color: yellow;
-  min-width: 1000px;
-  max-width: 1000px;
+.post-entry {
+  min-width: 800px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  padding: 32px 0;
+  margin-top: 20px;
+  padding-top: 20px;
+  border: 1px solid #ddd;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 2px #ddd;
+  box-shadow: 0 0 2px #ddd;
+  background: white;
+  color: #444;
+  padding: 2%;
+  position: relative;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 </style>

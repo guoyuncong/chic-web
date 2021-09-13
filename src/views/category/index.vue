@@ -60,7 +60,7 @@ export default {
     // 根据分类ID获取分类下所有的文章
     queryPosts(categoryId) {
       this.$router.push({
-        path: '/posts/post',
+        path: '/post/page',
         query: { categoryId: categoryId }
       })
     }
