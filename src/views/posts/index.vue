@@ -1,32 +1,38 @@
 <template>
   <div>
-    <div class="entries-container">
-      <div class="post-entry"
-           v-for="item in tableDate"
-           :key="item.postId" @click="queryPostDetail(item.postId)">
-        <div class="post-desc">
+    <div class="post-container">
+      <div v-for="item in tableData"
+           :key="item.postId"
+           class="post-item">
+        <div class="post-images">
+          <img class="post-thumbnail"
+               :src="item.thumbnail" />
+        </div>
+        <div class="post-data" @click="queryPostDetail(item.postId)">
           <div class="post-title">
             {{ item.title }}
           </div>
-          <div class="post-content">
-            <p> {{ item.digest }} </p>
+          <div class="post-digest">
+            {{ item.digest }}
           </div>
-          <div class="post-meta">
-            {{ item.publishTime}}
+          <div class="post-time">
+            {{ item.publishTime }}
           </div>
         </div>
       </div>
     </div>
-    <!-- 分页 -->
-    <pagination v-show="total > 0"
-                :total="total"
-                :current.sync="pageQuery.current"
-                :size.sync="pageQuery.size"
-                :keyword.sync="pageQuery.keyword"
-                @pagination="fetchData" />
+    <div>
+      <!-- 分页 -->
+      <pagination v-show="total > 0"
+                  :total="total"
+                  :current.sync="pageQuery.current"
+                  :size.sync="pageQuery.size"
+                  :keyword.sync="pageQuery.keyword"
+                  @pagination="fetchData" />
+    </div>
   </div>
-
 </template>
+  
 
 <script>
 import { pagePost } from '@/api/post'
@@ -40,7 +46,7 @@ export default {
   data() {
     return {
       // 文章列表
-      tableDate: [],
+      tableData: [],
       // 文章总数
       total: 0,
       // 搜索/分页关键字
@@ -68,7 +74,7 @@ export default {
         current: this.pageQuery.current,
         size: this.pageQuery.size
       }).then(response => {
-        this.tableDate = response.data.records
+        this.tableData = response.data.records
         this.total = response.data.total
       })
     },
@@ -84,33 +90,58 @@ export default {
 </script>
 
 <style scoped>
-.entries-container {
-  background-color: #f7f7f7;
-  width: 100%;
+.post-container {
+  max-width: 1000px;
+  max-height: 600px;
+  padding: 80px 25px 20px;
+  margin: 0 auto;
+}
+
+.post-item {
+  display: flex;
+  flex: 1;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 2, 4, 0.06),0 0 1px rgba(0, 2, 4, 0.11);
+  padding-top: 0px;
+  margin: 40px;
+}
+
+.post-thumbnail {
+  width: 400px;
   height: 100%;
-  padding-top: 60px;
+  border-radius: 10px 0 0 10px;
+  overflow: hidden;
+  object-fit: cover;
 }
-.post-entry {
-  min-width: 800px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+
+.post-data {
+  height: 100%;
+  flex-direction: column;
+  padding: 1.75rem;
+}
+
+.post-title {
+  font-size: 1.375rem;
+  font-weight: 400;
+  vertical-align: middle;
+  color: #343a40;
+}
+
+.post-digest {
+  width: 100%;
   margin-top: 20px;
-  padding-top: 20px;
-  border: 1px solid #ddd;
-  border: 1px solid #ddd;
-  box-shadow: 0 0 2px #ddd;
-  box-shadow: 0 0 2px #ddd;
-  background: white;
-  color: #444;
-  padding: 2%;
-  position: relative;
+  line-height: 1.5;
+  font-size: 0.8em;
+  color: #949b9e;
 }
-p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+
+.post-time {
+  margin-top: 1.125rem;
+  font-size: 0.825rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 </style>

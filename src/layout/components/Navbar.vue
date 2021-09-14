@@ -4,11 +4,11 @@
       <div class="navbar-log">
         匆匆那年
       </div>
-      <div class="navbar-menu">
+      <!-- <div class="navbar-menu">
         <a>首页</a>
         <a>首页</a>
         <a>首页</a>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

@@ -1,15 +1,15 @@
 <template>
-  <div class="post-container">
-    <div class="post-header">
-      <h1 class="post-title">
+  <div class="post-detail-container">
+    <div class="post-detail-header">
+      <h1 class="post-detail-title">
         {{ postDetail.title }}
       </h1>
-      <div class="post-data">
+      <div class="post-detail-data">
         Published on {{ postDetail.publishTime }}
       </div>
-      <p class="post-tags"></p>
+      <p class="post-detail-tags"></p>
     </div>
-    <div class="post-content" v-html="postDetail.formatContent">
+    <div class="post-detail-content" v-html="postDetail.formatContent">
     </div>
   </div>
 </template>
