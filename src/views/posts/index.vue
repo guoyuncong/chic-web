@@ -53,7 +53,7 @@ export default {
       },
     }
   },
-  // 获取请求中的分类ID
+  // 获取请求参数中的分类ID，并执行方法获取文章列表
   created() {
     this.pageQuery.categoryIds = this.$route.query.categoryId
     this.fetchData()
@@ -88,7 +88,7 @@ export default {
   background-color: #f7f7f7;
   width: 100%;
   height: 100%;
-  padding-top: 50px;
+  padding-top: 60px;
 }
 .post-entry {
   min-width: 800px;

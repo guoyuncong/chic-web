@@ -1,10 +1,11 @@
+// 文章总体样式
 .post-container {
   background-color: white;
-  max-width: 1000px;
+  max-width: 900px;
   padding: 80px 25px 20px;
-  margin: 0 auto
+  margin: 0 auto;
 }
-
+// 图片样式
 .post-content img {
     position: relative;
     display: block;
@@ -18,10 +19,22 @@
     font-size: 20px;
     word-wrap: break-word;
     word-break: break-word;
+    line-height: 2.0;
+}
+
+.post-data {
+  font-size: 12px;
+  color: #5f5f5f;
+}
+
+.post-tags {
+  margin: 0;
+  padding: 5px 0 15px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 code {
-  font-family: Menlo,Bitstream Vera Sans Mono,DejaVu Sans Mono,Monaco,Consolas,monospace;
+  font-family: Menlo, Bitstream Vera Sans Mono,DejaVu Sans Mono,Monaco,Consolas,monospace;
   font-size: 13px;
   margin: 0 3px;
   padding: 2px 6px;
@@ -38,8 +51,8 @@ pre code {
 }
 
 .post-content pre code {
-  line-height: 28px;
-  font-family: 'Times New Roman', æ¥·ä½“;
+  line-height: 1.8;
+  font-family: "Palatino Linotype", "Book Antiqua", 楷体, Helvetica Neue, Helvetica, PingFang SC, Arial, sans-serif;
   margin: 0;
   padding: 1.3em;
   color: #313131;

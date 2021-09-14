@@ -5,8 +5,9 @@
         {{ postDetail.title }}
       </h1>
       <div class="post-data">
-        {{ postDetail.title }}
+        Published on {{ postDetail.publishTime }}
       </div>
+      <p class="post-tags"></p>
     </div>
     <div class="post-content" v-html="postDetail.formatContent">
     </div>
