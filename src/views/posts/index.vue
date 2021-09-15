@@ -112,7 +112,6 @@ export default {
   height: 100%;
   border-radius: 10px 0 0 10px;
   overflow: hidden;
-  object-fit: cover;
 }
 
 .post-data {
