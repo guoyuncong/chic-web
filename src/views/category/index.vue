@@ -89,8 +89,8 @@ export default {
   padding: 10px;
 }
 .image {
-  width: 280px;
   height: 150px;
   display: block;
+  object-fit: fill;
 }
 </style>
