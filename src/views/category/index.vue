@@ -11,7 +11,7 @@
         <div class="group-content">
           <el-row :gutter="20">
             <el-col :span="6" v-for="child in item.child" :key="child.categoryId">
-              <div class="card" @click="queryPosts(item.categoryId)">
+              <div class="card" @click="queryPosts(child.categoryId)">
                 <el-card :body-style="{ padding: '0px' }">
                   <img :src="child.thumbnail" class="image">
                   <div style="padding: 14px;">
