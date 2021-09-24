@@ -8,7 +8,7 @@
           <img class="post-thumbnail"
                :src="item.thumbnail" />
         </div>
-        <div class="post-data" @click="queryPostDetail(item.postId)">
+        <div class="post-data" @click="queryPostDetail(item.abbr)">
           <div class="post-title">
             {{ item.title }}
           </div>
@@ -79,10 +79,10 @@ export default {
       })
     },
     // 根据文章ID获取文章详情
-    queryPostDetail(postId) {
+    queryPostDetail(abbr) {
       this.$router.push({
         path: '/post/detail',
-        query: { postId: postId }
+        query: { abbr }
       })
     }
   }

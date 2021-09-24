@@ -11,7 +11,7 @@ export function pagePost(params) {
 // 文章详情
 export function detailPost(params) {
   return request({
-    url: '/post/detail',
+    url: '/post/client/detail',
     method: 'get',
     params
   })

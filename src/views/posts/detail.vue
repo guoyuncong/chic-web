@@ -7,7 +7,11 @@
       <div class="post-detail-data">
         Published on {{ postDetail.publishTime }}
       </div>
-      <p class="post-detail-tags"></p>
+      <p class="post-detail-tags">
+        <el-button v-for="item in postDetail.tags" :key="item.tagId" class="tagButton" size="mini" :type="btnType()" round>
+            {{ item.tagName }}
+        </el-button>
+      </p>
     </div>
     <div class="post-detail-content" v-html="postDetail.formatContent">
     </div>
@@ -21,22 +25,26 @@ export default {
   name: 'Post-Detail',
   data() {
     return {
-      // 文章ID
-      postId: '',
+      // 文章别名，客户端访问一律用别名
+      abbr: '',
       // 文章内容
-      postDetail: null
+      postDetail: ''
     }
   },
   // 获取请求参数中的分类ID，并执行方法获取文章列表
   created() {
-    this.postId = this.$route.query.postId
+    this.abbr = this.$route.query.abbr
     this.fetchData()
   },
   methods: {
+    // 按钮随机类型，类型不同颜色不同
+    btnType() {
+      return ['primary', 'success', 'warning', 'danger', 'info'][Math.floor((Math.random() * 4))]
+    },
     // 获取文章列表
     fetchData() {
       detailPost({
-        postId: this.postId
+        abbr: this.abbr
       }).then(response => {
         this.postDetail = response.data
       })
@@ -44,3 +52,10 @@ export default {
   }
 }
 </script>
+
+<style scoped >
+.tagButton {
+  margin-top:10px;
+  margin-left:10px;
+}
+</style>

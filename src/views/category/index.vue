@@ -5,7 +5,6 @@
          :style="randomBg(index)">
       <div class="group-container">
         <div class="group-title">
-          <!-- <img src="https://www.topjava.cn/images/website/group/group-list-jzbx.png"> -->
           {{ item.categoryName }}
         </div>
         <div class="group-content">
