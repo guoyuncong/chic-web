@@ -56,6 +56,5 @@ export default {
 <style scoped >
 .tagButton {
   margin-top:10px;
-  margin-left:10px;
 }
 </style>
