@@ -4,6 +4,7 @@
   max-width: 900px;
   padding: 80px 25px 20px;
   margin: 0 auto;
+  font-family: Palatino Linotype, 楷体, kai, Helvetica Neue, Helvetica, PingFang SC, Arial, sans-serif;
 }
 // 图片样式
 .post-detail-content img {
@@ -20,6 +21,11 @@
     word-wrap: break-word;
     word-break: break-word;
     line-height: 2.0;
+}
+
+// 重新定义 el-button 样式
+.el-button {
+  font-family: Times New Roman, 楷体, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
 }
 
 .post-detail-data {

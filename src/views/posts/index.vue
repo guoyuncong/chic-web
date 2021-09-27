@@ -55,7 +55,9 @@ export default {
         categoryIds: '',
         keyword: '',
         current: 1,
-        size: 10
+        size: 10,
+        // 文章状态为已发布
+        status: 1
       },
     }
   },
@@ -72,7 +74,8 @@ export default {
         categoryIds: this.pageQuery.categoryIds,
         keyword: this.pageQuery.keyword,
         current: this.pageQuery.current,
-        size: this.pageQuery.size
+        size: this.pageQuery.size,
+        status: this.pageQuery.status
       }).then(response => {
         this.tableData = response.data.records
         this.total = response.data.total
