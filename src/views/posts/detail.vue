@@ -55,7 +55,7 @@ export default {
 
 <style scoped >
 .post-detail-title {
-  font-size: 21px;
+  font-size: 25px;
 }
 .tagButton {
   margin-top:10px;
