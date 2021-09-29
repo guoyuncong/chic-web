@@ -23,6 +23,12 @@
     line-height: 2.0;
 }
 
+// 标题
+.post-detail-content h1, .post-detail-content h2, .post-detail-content h3 {
+  position: relative;
+  margin: 20px 0;
+}
+
 // 重新定义 el-button 样式
 .el-button {
   font-family: Times New Roman, 楷体, kai, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
