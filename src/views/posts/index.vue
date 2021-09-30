@@ -12,9 +12,7 @@
           <div class="post-title">
             {{ item.title }}
           </div>
-          <div class="post-digest">
-            {{ item.digest }}
-          </div>
+          <div class="post-digest" v-html="item.digest" />
           <div class="post-time">
             {{ item.publishTime }}
           </div>
