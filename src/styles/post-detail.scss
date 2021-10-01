@@ -47,6 +47,12 @@
   border: 1px solid #ddd;
 }
 
+// 链接加下划线
+.post-detail-content p a {
+  color: #313131;
+  border-bottom: 1px solid #ccc;
+}
+
 // 重新定义 el-button 样式
 .el-button {
   font-family: Times New Roman, 楷体, kai, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
