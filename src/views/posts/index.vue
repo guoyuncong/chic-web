@@ -19,15 +19,13 @@
         </div>
       </div>
     </div>
-    <div>
-      <!-- 分页 -->
-      <pagination v-show="total > 0"
-                  :total="total"
-                  :current.sync="pageQuery.current"
-                  :size.sync="pageQuery.size"
-                  :keyword.sync="pageQuery.keyword"
-                  @pagination="fetchData" />
-    </div>
+    <!-- 分页 -->
+    <pagination v-show="total > 0"
+                :total="total"
+                :current.sync="pageQuery.current"
+                :size.sync="pageQuery.size"
+                :keyword.sync="pageQuery.keyword"
+                @pagination="fetchData" />
   </div>
 </template>
   
@@ -53,7 +51,7 @@ export default {
         categoryIds: '',
         keyword: '',
         current: 1,
-        size: 10,
+        size: 5,
         // 文章状态为已发布
         status: 1
       },
@@ -93,7 +91,6 @@ export default {
 <style scoped>
 .post-container {
   max-width: 1000px;
-  max-height: 600px;
   padding: 80px 25px 20px;
   margin: 0 auto;
 }

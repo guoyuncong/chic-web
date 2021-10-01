@@ -98,7 +98,7 @@ export default {
   background: #fff;
   padding: 30px 15px;
   display: flex;
-  justify-content: right;
+  justify-content: center;
 }
 .pagination-container.hidden {
   display: none;
