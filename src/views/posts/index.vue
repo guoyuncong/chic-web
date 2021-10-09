@@ -120,6 +120,7 @@ export default {
 
 .post-title {
   font-size: 1.375rem;
+  line-height: 30px;
   font-weight: 400;
   vertical-align: middle;
   color: #343a40;
